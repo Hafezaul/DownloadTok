@@ -1,0 +1,13 @@
+:root {
+    --pureHeading:white;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--pureHeading);
+}
+
+.progress-container {
+    display: none;
+    margin-top: 15px;
+}

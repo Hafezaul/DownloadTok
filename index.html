@@ -6,8 +6,10 @@
    DownloadTok
   </title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
- </head>
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- CSS -->
+   <link rel="stylesheet" href="style.css">
+</head>
  <body class="bg-light">
   <!-- Header -->
   <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center">
@@ -25,73 +27,73 @@
    <h1 class="h2 mb-4">
     Download lebih mudah dan cepat dengan DownloadTok
    </h1>
-   <div class="d-flex justify-content-center mb-5 px-3">
-    <input class="form-control w-50 rounded-start" placeholder="Paste your link here!" type="text"/>
-    <button class="btn btn-secondary d-flex align-items-center px-3">
-     <i class="fas fa-paste me-2">
-     </i>
-     Tempel
-    </button>
-    <button class="btn btn-primary rounded-end d-flex align-items-center px-3">
-     <i class="fas fa-download me-2">
-     </i>
-     Download
-    </button>
-   </div>
-   <section class="bg-primary text-white py-5">
-    <h2 class="h4 mb-4">
-     3 kelebihan mendownload video TikTok di DownloadTok
-    </h2>
-    <div class="row">
-     <div class="col-md-4">
-      <h3 class="h5">
-       Instan Tanpa Watermark
-      </h3>
-      <p>
-       Download video tanpa watermark TikTok.
-      </p>
-     </div>
-     <div class="col-md-4">
-      <h3 class="h5">
-       Website Tanpa Iklan
-      </h3>
-      <p>
-       Download video tanpa gangguan iklan yang menyebalkan.
-      </p>
-     </div>
-     <div class="col-md-4">
-      <h3 class="h5">
-       Gratis Tanpa Premium
-      </h3>
-      <p>
-       Tanpa biaya tambahan untuk download video TikTok.
-      </p>
-     </div>
+
+   <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="input-group mb-3">
+                <input type="text" id="pasteInput" class="form-control" placeholder="Paste your link at here!!">
+                <button class="btn btn-secondary" id="pasteButton" type="button">
+                    <i class="bi bi-clipboard"></i> Tempel
+                </button>
+                <button class="btn btn-primary" id="downloadButton" type="button" disabled>
+                    <i class="bi bi-download"></i> Download
+                </button>
+            </div>
+            
+            <div id="linkPreview" class="mt-3"></div>
+            
+            <div class="progress-container">
+                <div class="progress">
+                    <div id="downloadProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                </div>
+                <div id="downloadStatus" class="text-center mt-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+   <section class="bg-primary w-100 h-50 p-4 mt-5">
+    <h1>3 kelebihan mendownload video TikTok di DownloadTok</h1>
+    <div class="row text-white pt-md-5 text-center">
+        <div class="col-md-4 mt-md-5">
+            <h3>Instal Tanpa Watermark.</h3>
+            <p>Download video tanpa watermark TikTok.</p>
+        </div>
+        <div class="col-md-4 mt-md-5">
+            <h3>Website Tanpa Iklan</h3>
+            <p>Download video tanpa gangguan pop up iklan yang menyebalkan!</p>
+        </div>
+        <div class="col-md-4 mt-md-5">
+            <h3>Gratis Tanpa Premium</h3>
+            <p>Tanpa batas dalam melakukan aksi 
+                download video TikTok!
+            </p>
+        </div>
     </div>
    </section>
    <section class="py-5">
     <div class="container">
      <div class="row align-items-center">
       <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-       <img alt="Illustration of people downloading a video on a smartphone" class="img-fluid" height="300" src="https://storage.googleapis.com/a1aa/image/c1tGId2Mi5PZKHNOHvYGSwla7lL4g73FQsHVDkeY6Z8.jpg" style="max-width: 300px;" width="300"/>
+       <img alt="Illustration of people downloading a video on a smartphone" class="img-fluid" height="300" src="assets/images/downloadicon.svg" style="max-width: 300px;" width="300"/>
       </div>
       <div class="col-md-6 text-center text-md-start">
        <h2 class="h4 mb-4">
         Download Sekarang Juga
        </h2>
        <div class="d-flex flex-column align-items-center align-items-md-start gap-3">
-        <button class="btn btn-primary d-flex align-items-center">
-         <i class="fas fa-windows me-2">
-         </i>
+        <button id="alert" class="btn btn-primary d-flex align-items-center w-100">
+            <i class="fa-brands fa-windows m-2"></i>
          Windows 10/11
         </button>
-        <button class="btn btn-success d-flex align-items-center">
-         <i class="fas fa-android me-2">
+        <button id="alert1" class="btn btn-success d-flex align-items-center w-100">
+            <i class="fa-brands fa-android m-2"></i>
          </i>
          Android
         </button>
-        <button class="btn btn-dark d-flex align-items-center">
-         <i class="fas fa-linux me-2">
+        <button id="alert2" class="btn btn-dark d-flex align-items-center w-100">
+            <i class="fa-brands fa-linux m-2"></i>
          </i>
          Linux
         </button>
@@ -101,24 +103,27 @@
     </div>
    </section>
   </main>
+  
   <!-- Footer -->
   <footer class="bg-primary text-white py-3">
    <div class="d-flex justify-content-around mb-3">
     <div>
-     Support Kami
+     <a href="" class="text-decoration-none text-white">Support Kami</a>
     </div>
     <div>
-     Developer Kami
+        <a href="" class="text-decoration-none text-white">Developer Kami</a>
     </div>
     <div>
-     Customer Service
+     <a href="" class="text-decoration-none text-white">Customer Service</a>
     </div>
    </div>
    <div class="text-center">
     © 2025 DownloadTok. All Rights Reserved.
    </div>
   </footer>
+  <script src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  </body>
 </html>
