@@ -1,3 +1,5 @@
+/*  */
+
 :root {
     --pureHeading:white;
 }
@@ -7,7 +9,27 @@ h1 {
     color: var(--pureHeading);
 }
 
+/* Container */
+
 .progress-container {
     display: none;
     margin-top: 15px;
+}
+
+/* Card Section */
+
+.card1 {
+    background-color: #2FA9F4;
+    color: white;
+    width: 300px;
+    padding: 2px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 }
